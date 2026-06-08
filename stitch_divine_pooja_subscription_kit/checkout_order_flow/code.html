@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SacredSamskara - Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#261a00",
+                        "surface-variant": "#f0e1c7",
+                        "secondary-fixed-dim": "#ffb77a",
+                        "on-tertiary-fixed-variant": "#8c171b",
+                        "on-background": "#221b0b",
+                        "primary-fixed": "#ffdfa0",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "secondary": "#8f4e00",
+                        "primary": "#795900",
+                        "surface-container-high": "#f5e6cc",
+                        "on-secondary-fixed": "#2e1500",
+                        "surface-bright": "#fff8f2",
+                        "tertiary-container": "#ff847c",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#f0e1c7",
+                        "on-primary-fixed-variant": "#5c4300",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#683700",
+                        "surface-tint": "#795900",
+                        "tertiary": "#ad302f",
+                        "on-surface-variant": "#4f4634",
+                        "on-surface": "#221b0b",
+                        "outline": "#817662",
+                        "on-tertiary-container": "#7e0a12",
+                        "on-primary-container": "#503a00",
+                        "surface-container": "#fbecd2",
+                        "on-secondary-fixed-variant": "#6d3a00",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#feefd5",
+                        "primary-container": "#d4a017",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#e7d8bf",
+                        "secondary-container": "#fe9832",
+                        "surface": "#fff8f2",
+                        "inverse-surface": "#382f1e",
+                        "primary-fixed-dim": "#f6be39",
+                        "background": "#fff8f2",
+                        "on-tertiary-fixed": "#410004",
+                        "tertiary-fixed": "#ffdad7",
+                        "inverse-primary": "#f6be39",
+                        "outline-variant": "#d3c5ae",
+                        "surface-container-low": "#fff2dd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-padding-lg": "120px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "h3": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Playfair Display"],
+                        "h2": ["Playfair Display"],
+                        "h1-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h2": ["36px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "h1-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .luxury-shadow {
+            box-shadow: 0px 10px 40px rgba(212, 160, 23, 0.1);
+        }
+        /* Custom scrollbar to match luxury theme */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fff8f2; }
+        ::-webkit-scrollbar-thumb { background: #d3c5ae; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #795900; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- Top Navigation (Transactional intent -> Suppressed main links, simplified header) -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/80 backdrop-blur-md dark:bg-inverse-surface/80 shadow-[0px_10px_40px_rgba(212,160,23,0.1)]">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<div class="text-h3 font-h3 text-primary dark:text-inverse-primary">
+                SacredSamskara
+            </div>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Secure Checkout</span>
+</div>
+</div>
+</header>
+<main class="flex-grow py-section-padding-lg px-gutter">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Main Checkout Area (8 cols) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Progress Indicator -->
+<div class="flex items-center justify-between relative mb-12">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-px bg-outline-variant z-0"></div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 h-px bg-primary z-0"></div>
+<div class="relative z-10 flex flex-col items-center gap-2 bg-background px-4">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm shadow-[0px_4px_10px_rgba(212,160,23,0.2)]">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase">Details</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 bg-background px-4">
+<div class="w-8 h-8 rounded-full border-2 border-primary bg-surface-container-lowest text-primary flex items-center justify-center font-label-sm luxury-shadow">
+                            2
+                        </div>
+<span class="font-label-sm text-label-sm text-primary uppercase">Payment</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 bg-background px-4">
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant bg-surface-container-lowest text-outline-variant flex items-center justify-center font-label-sm">
+                            3
+                        </div>
+<span class="font-label-sm text-label-sm text-outline-variant uppercase">Confirm</span>
+</div>
+</div>
+<!-- Customer Details Form -->
+<section class="bg-surface-container-lowest rounded-xl p-8 luxury-shadow border border-outline-variant/30">
+<h2 class="font-h2 text-h2 text-primary mb-6">Customer Details</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="fullName">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" id="fullName" placeholder="Enter your full name" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="mobile">Mobile Number</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" id="mobile" placeholder="+91" type="tel"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="email">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" id="email" placeholder="your@email.com" type="email"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="address">Delivery Address</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" id="address" placeholder="Street address, apartment, suite, etc." type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="pincode">Pincode</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" id="pincode" placeholder="6-digit pincode" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="city">City</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" id="city" placeholder="City" type="text"/>
+</div>
+</div>
+</form>
+</section>
+<!-- Payment Methods -->
+<section class="bg-surface-container-lowest rounded-xl p-8 luxury-shadow border border-outline-variant/30 mt-8 opacity-50 pointer-events-none transition-opacity duration-300" id="payment-section">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-h2 text-h2 text-primary">Payment Method</h2>
+<div class="flex gap-2 items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="font-label-sm text-label-sm uppercase">SSL Secure</span>
+</div>
+</div>
+<div class="space-y-4">
+<!-- UPI Option -->
+<label class="flex items-center p-4 border border-outline-variant rounded-lg cursor-pointer hover:border-primary hover:bg-surface-container-low transition-colors">
+<input class="text-primary focus:ring-primary border-outline-variant h-5 w-5" name="payment_method" type="radio"/>
+<div class="ml-4 flex-grow">
+<span class="font-body-md text-on-surface block">UPI (GPay, PhonePe, Paytm)</span>
+</div>
+<span class="material-symbols-outlined text-primary">qr_code_scanner</span>
+</label>
+<!-- Card Option -->
+<label class="flex items-center p-4 border border-primary bg-surface-container-low rounded-lg cursor-pointer relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5"></div>
+<input checked="" class="text-primary focus:ring-primary border-outline-variant h-5 w-5 relative z-10" name="payment_method" type="radio"/>
+<div class="ml-4 flex-grow relative z-10">
+<span class="font-body-md text-on-surface block font-semibold text-primary">Credit / Debit Card</span>
+</div>
+<span class="material-symbols-outlined text-primary relative z-10">credit_card</span>
+</label>
+<!-- Net Banking -->
+<label class="flex items-center p-4 border border-outline-variant rounded-lg cursor-pointer hover:border-primary hover:bg-surface-container-low transition-colors">
+<input class="text-primary focus:ring-primary border-outline-variant h-5 w-5" name="payment_method" type="radio"/>
+<div class="ml-4 flex-grow">
+<span class="font-body-md text-on-surface block">Net Banking</span>
+</div>
+<span class="material-symbols-outlined text-primary">account_balance</span>
+</label>
+</div>
+</section>
+</div>
+<!-- Order Summary Sidebar (4 cols) -->
+<div class="lg:col-span-4">
+<div class="sticky top-28 space-y-6">
+<div class="bg-surface-container-highest rounded-xl p-6 luxury-shadow border border-outline-variant/50 relative overflow-hidden">
+<!-- Decorative background texture -->
+<div class="absolute top-0 right-0 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined" style="font-size: 150px; font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-6 relative z-10 border-b border-outline-variant pb-4">Order Summary</h3>
+<div class="flex items-start gap-4 mb-6 relative z-10">
+<div class="w-20 h-20 rounded-lg overflow-hidden border border-primary/20 shrink-0 bg-surface-container-lowest">
+<img alt="Monthly Pooja Kit with brass items" class="w-full h-full object-cover" data-alt="A beautifully arranged premium Indian Pooja kit on a white marble surface. The kit includes a gleaming brass oil lamp, small bowls filled with vibrant red kumkum and yellow turmeric, and fresh marigold flowers. Soft, warm directional lighting highlights the metallic sheen of the brass. The overall aesthetic is luxurious, modern minimalist, and deeply spiritual." src="https://lh3.googleusercontent.com/aida/AP1WRLuO5CzUjPE_h4MMH5j0mX7vzZz2J8l-tZYqzCj1eZx0hfeW3ODivyWSblgK4L-7Y2bmI9OpJLrVXFSoCtQQB8fWft4ii6GI3mhyQu2OoSxG6Dp9_RNK1Z2unEozJNCCc-_ZfA3Bfl-AcgRd_1Ee2epq1Y7GzGX8kbp9qP3LdzDX_bJzdiUyVo6AHp2hcOl4vUzN4m6uQH0L4g-CdwPujDphiOoTGVhyxZMurHLUhi8wGdV8bRUA5tsC411I"/>
+</div>
+<div>
+<h4 class="font-body-md font-semibold text-on-surface">Monthly Pooja Kit</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Premium Curated Items</p>
+<div class="mt-2 flex items-center gap-2">
+<span class="font-body-md text-primary font-semibold">₹1,285</span>
+<span class="font-body-md text-on-surface-variant line-through text-sm">₹1,500</span>
+</div>
+</div>
+</div>
+<div class="space-y-3 font-body-md text-on-surface-variant mb-6 border-y border-outline-variant py-4 relative z-10">
+<div class="flex justify-between">
+<span>Subtotal</span>
+<span>₹1,500</span>
+</div>
+<div class="flex justify-between text-secondary">
+<span>Divine Offer Discount</span>
+<span>-₹215</span>
+</div>
+<div class="flex justify-between">
+<span>Shipping</span>
+<span>Free</span>
+</div>
+</div>
+<div class="flex justify-between items-end mb-8 relative z-10">
+<span class="font-body-lg text-on-surface">Total</span>
+<div class="text-right">
+<span class="font-h3 text-h3 text-primary block">₹1,285</span>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary/10 px-2 py-1 rounded mt-1 inline-block">You save ₹215</span>
+</div>
+</div>
+<div class="space-y-3 relative z-10">
+<button class="w-full bg-primary hover:bg-primary/90 text-on-primary font-body-md font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg">
+                                Buy Now
+                            </button>
+<button class="w-full bg-transparent border border-primary text-primary hover:bg-primary/5 font-body-md font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
+                                Subscribe Monthly
+                                <span class="material-symbols-outlined text-sm">autorenew</span>
+</button>
+</div>
+<div class="mt-4 flex items-center justify-center gap-2 text-on-surface-variant relative z-10">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="font-label-sm text-label-sm">Secure 256-bit Encryption</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant w-full rounded-none">
+<div class="flex flex-col items-center py-section-padding-lg px-gutter max-w-container-max mx-auto text-center">
+<div class="text-h2 font-h2 text-primary dark:text-inverse-primary mb-4">
+                SacredSamskara
+            </div>
+<div class="flex flex-wrap justify-center gap-6 mb-8">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary-container transition-colors font-label-sm text-label-sm uppercase tracking-wider" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary-container transition-colors font-label-sm text-label-sm uppercase tracking-wider" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary-container transition-colors font-label-sm text-label-sm uppercase tracking-wider" href="#">Shipping Info</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary-container transition-colors font-label-sm text-label-sm uppercase tracking-wider" href="#">Returns</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary-container transition-colors font-label-sm text-label-sm uppercase tracking-wider" href="#">Contact Us</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant">
+                © 2024 SacredSamskara Spiritual Services. Handcrafted with Devotion.
+            </p>
+</div>
+</footer>
+<script>
+        // Simple script to highlight the active input field's label and simulate progress
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
+            
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.previousElementSibling.classList.add('text-primary');
+                });
+                input.addEventListener('blur', () => {
+                    input.previousElementSibling.classList.remove('text-primary');
+                });
+            });
+
+            // Simulate enabling payment section if basic details are filled
+            const form = document.querySelector('form');
+            const paymentSection = document.getElementById('payment-section');
+            
+            form.addEventListener('input', () => {
+                // A very basic check - if at least one field has value, subtly enable the next section
+                const hasValue = Array.from(inputs).some(input => input.value.trim() !== '');
+                if(hasValue) {
+                    paymentSection.classList.remove('opacity-50', 'pointer-events-none');
+                } else {
+                    paymentSection.classList.add('opacity-50', 'pointer-events-none');
+                }
+            });
+        });
+    </script>
+</body></html>

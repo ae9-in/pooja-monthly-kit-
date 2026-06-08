@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SacredSamskara - Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#261a00",
+                        "surface-variant": "#f0e1c7",
+                        "secondary-fixed-dim": "#ffb77a",
+                        "on-tertiary-fixed-variant": "#8c171b",
+                        "on-background": "#221b0b",
+                        "primary-fixed": "#ffdfa0",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "secondary": "#8f4e00",
+                        "primary": "#795900",
+                        "surface-container-high": "#f5e6cc",
+                        "on-secondary-fixed": "#2e1500",
+                        "surface-bright": "#fff8f2",
+                        "tertiary-container": "#ff847c",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#f0e1c7",
+                        "on-primary-fixed-variant": "#5c4300",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#683700",
+                        "surface-tint": "#795900",
+                        "tertiary": "#ad302f",
+                        "on-surface-variant": "#4f4634",
+                        "on-surface": "#221b0b",
+                        "outline": "#817662",
+                        "on-tertiary-container": "#7e0a12",
+                        "on-primary-container": "#503a00",
+                        "surface-container": "#fbecd2",
+                        "on-secondary-fixed-variant": "#6d3a00",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#feefd5",
+                        "primary-container": "#d4a017",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#e7d8bf",
+                        "secondary-container": "#fe9832",
+                        "surface": "#fff8f2",
+                        "inverse-surface": "#382f1e",
+                        "primary-fixed-dim": "#f6be39",
+                        "background": "#fff8f2",
+                        "on-tertiary-fixed": "#410004",
+                        "tertiary-fixed": "#ffdad7",
+                        "inverse-primary": "#f6be39",
+                        "outline-variant": "#d3c5ae",
+                        "surface-container-low": "#fff2dd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-padding-lg": "120px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "h3": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Playfair Display"],
+                        "h2": ["Playfair Display"],
+                        "h1-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h2": ["36px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "h1-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden md:flex flex-col w-64 bg-surface-container-lowest border-r border-outline-variant h-screen sticky top-0 shrink-0">
+<div class="p-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl icon-fill" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-h3 text-h3 text-primary">Admin</span>
+</div>
+<nav class="flex-1 px-4 py-6 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 bg-surface-variant text-on-surface-variant rounded-lg font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined icon-fill" data-icon="dashboard">dashboard</span>
+                Dashboard Overview
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-lg font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+                Order Management
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-lg font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined" data-icon="autorenew">autorenew</span>
+                Subscriptions
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface hover:bg-surface-container hover:text-primary transition-colors rounded-lg font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                Customer Database
+            </a>
+</nav>
+<div class="p-6 border-t border-outline-variant">
+<button class="flex items-center gap-3 text-on-surface hover:text-error transition-colors font-label-sm text-label-sm">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Sign Out
+            </button>
+</div>
+</aside>
+<!-- Mobile Header -->
+<header class="md:hidden flex items-center justify-between p-4 bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary icon-fill" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-h3 text-[20px] text-primary">Admin</span>
+</div>
+<button class="text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col p-4 md:p-8 overflow-y-auto w-full max-w-[1600px] mx-auto gap-8">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-h1-mobile md:font-h2 text-h1-mobile md:text-h2 text-primary mb-2">Dashboard Overview</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Welcome back. Here is today's spiritual harmony report.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-highest text-on-surface px-4 py-2 rounded-DEFAULT font-label-sm text-label-sm flex items-center gap-2 hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_today">calendar_today</span>
+                    Last 30 Days
+                </button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-DEFAULT font-label-sm text-label-sm flex items-center gap-2 hover:bg-primary-container transition-colors shadow-[0px_10px_40px_rgba(212,160,23,0.1)]">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                    Export Report
+                </button>
+</div>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Daily Orders Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_10px_40px_rgba(212,160,23,0.05)] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-primary" data-icon="shopping_cart">shopping_cart</span>
+</div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Daily Orders</h3>
+<span class="bg-surface-container px-2 py-1 rounded text-primary text-[10px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="trending_up">trending_up</span> +12%
+                    </span>
+</div>
+<div class="font-h2 text-h2 text-primary relative z-10">142</div>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-2 relative z-10">18 pending fulfillment</p>
+</div>
+<!-- Monthly Revenue Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_10px_40px_rgba(212,160,23,0.05)] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Monthly Revenue</h3>
+<span class="bg-surface-container px-2 py-1 rounded text-primary text-[10px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="trending_up">trending_up</span> +8.4%
+                    </span>
+</div>
+<div class="font-h2 text-h2 text-primary relative z-10">$24,500</div>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-2 relative z-10">vs $22,600 last month</p>
+</div>
+<!-- Subscriber Growth Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_10px_40px_rgba(212,160,23,0.05)] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-primary" data-icon="group_add">group_add</span>
+</div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Subscriptions</h3>
+<span class="bg-surface-container px-2 py-1 rounded text-primary text-[10px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="trending_up">trending_up</span> +24
+                    </span>
+</div>
+<div class="font-h2 text-h2 text-primary relative z-10">856</div>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-2 relative z-10">3 canceled this week</p>
+</div>
+</div>
+<!-- Main Data Visualization Area (Simulated Chart & List) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Chart Area (Spans 2 columns on large screens) -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_10px_40px_rgba(212,160,23,0.05)] flex flex-col h-[400px]">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-h3 text-[20px] text-on-background">Revenue Trends</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Simulated Graph Area -->
+<div class="flex-1 border-b border-l border-outline-variant relative flex items-end justify-between px-4 pb-4 pt-10">
+<!-- Y Axis Labels -->
+<div class="absolute left-[-30px] top-0 bottom-0 flex flex-col justify-between text-[10px] text-on-surface-variant py-4">
+<span>$5k</span>
+<span>$2.5k</span>
+<span>$0</span>
+</div>
+<!-- Graph Bars (Simulated Data) -->
+<div class="w-[10%] bg-surface-container hover:bg-primary-container transition-colors rounded-t-sm h-[30%] relative group cursor-pointer">
+<div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">$1,500</div>
+</div>
+<div class="w-[10%] bg-surface-container hover:bg-primary-container transition-colors rounded-t-sm h-[45%] relative group cursor-pointer"></div>
+<div class="w-[10%] bg-primary-fixed-dim hover:bg-primary transition-colors rounded-t-sm h-[60%] relative group cursor-pointer"></div>
+<div class="w-[10%] bg-surface-container hover:bg-primary-container transition-colors rounded-t-sm h-[50%] relative group cursor-pointer"></div>
+<div class="w-[10%] bg-surface-container hover:bg-primary-container transition-colors rounded-t-sm h-[75%] relative group cursor-pointer"></div>
+<div class="w-[10%] bg-surface-container hover:bg-primary-container transition-colors rounded-t-sm h-[65%] relative group cursor-pointer"></div>
+<div class="w-[10%] bg-primary-fixed-dim hover:bg-primary transition-colors rounded-t-sm h-[90%] relative group cursor-pointer">
+<div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">$4,500</div>
+</div>
+</div>
+<!-- X Axis Labels -->
+<div class="flex justify-between px-4 mt-2 text-[10px] text-on-surface-variant font-label-sm">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span>Sat</span>
+<span>Sun</span>
+</div>
+</div>
+<!-- Recent Activity List -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-[0px_10px_40px_rgba(212,160,23,0.05)] flex flex-col h-[400px]">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-h3 text-[20px] text-on-background">Recent Activity</h3>
+<a class="font-label-sm text-[12px] text-primary hover:underline" href="#">View All</a>
+</div>
+<div class="flex-1 overflow-y-auto space-y-4 pr-2">
+<!-- Activity Item 1 -->
+<div class="flex items-start gap-3 pb-4 border-b border-outline-variant/50">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<p class="font-body-md text-[14px] text-on-surface"><span class="font-bold">Order #8892</span> delivered successfully.</p>
+<p class="text-[12px] text-on-surface-variant mt-1">10 mins ago • Mumbai</p>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex items-start gap-3 pb-4 border-b border-outline-variant/50">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="person_add">person_add</span>
+</div>
+<div>
+<p class="font-body-md text-[14px] text-on-surface"><span class="font-bold">Aarti Patel</span> started a new Monthly Puja subscription.</p>
+<p class="text-[12px] text-on-surface-variant mt-1">45 mins ago • Delhi</p>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex items-start gap-3 pb-4 border-b border-outline-variant/50">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="inventory_2">inventory_2</span>
+</div>
+<div>
+<p class="font-body-md text-[14px] text-on-surface">Inventory alert: <span class="font-bold">Sandalwood Incense</span> low stock.</p>
+<p class="text-[12px] text-on-surface-variant mt-1">2 hours ago</p>
+</div>
+</div>
+<!-- Activity Item 4 -->
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<p class="font-body-md text-[14px] text-on-surface"><span class="font-bold">Order #8891</span> shipped.</p>
+<p class="text-[12px] text-on-surface-variant mt-1">3 hours ago • Bangalore</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

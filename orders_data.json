@@ -1,0 +1,51 @@
+{
+  "orders": [
+    {
+      "_id": "mock_order_376419",
+      "orderNumber": "ORD-458010",
+      "userId": {
+        "_id": "mock_user_712666",
+        "fullName": "test3",
+        "email": "test3@gmail.com",
+        "mobile": "67543245676554",
+        "role": "customer",
+        "status": "active",
+        "referralCode": "REF-9795",
+        "totalOrders": 1,
+        "totalSpent": 1285,
+        "createdAt": "2026-06-08T05:11:42.360Z"
+      },
+      "productId": {
+        "_id": "mock_product_01",
+        "productName": "Monthly Pooja Kit",
+        "sku": "ESSENTIAL-01",
+        "sellingPrice": 450,
+        "mrp": 665
+      },
+      "orderType": "one-time",
+      "subtotal": 1500,
+      "discount": 215,
+      "finalAmount": 1285,
+      "shippingCost": 0,
+      "orderStatus": "confirmed",
+      "deliveryStatus": "pending",
+      "createdAt": "2026-06-08T05:11:42.374Z"
+    }
+  ],
+  "subscriptions": [],
+  "customers": [
+    {
+      "_id": "mock_user_712666",
+      "fullName": "test3",
+      "email": "test3@gmail.com",
+      "mobile": "67543245676554",
+      "role": "customer",
+      "status": "active",
+      "referralCode": "REF-9795",
+      "totalOrders": 1,
+      "totalSpent": 1285,
+      "createdAt": "2026-06-08T05:11:42.360Z"
+    }
+  ],
+  "inventoryStock": 1499
+}

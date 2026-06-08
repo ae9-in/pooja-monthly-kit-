@@ -1,0 +1,15 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Next.js build output
+.next/
+out/
+
+# Environment variables
+.env*.local
+
+# Cache
+.eslintcache
+tsconfig.tsbuildinfo
+*.log
